@@ -13,17 +13,23 @@
       font-family: 'Roboto', sans-serif;
       background: linear-gradient(135deg, #D4AF37, #8B4513); /* Gold to Brown gradient */
       color: #fff;
-      text-align: center;
       margin: 0;
       padding: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-size: cover;
     }
 
-    .container {
-      padding: 40px;
+    .card {
+      width: 90%;
       max-width: 800px;
-      margin: 0 auto;
       background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
       border-radius: 15px;
+      padding: 40px;
+      box-shadow: 0 0 30px rgba(255, 215, 0, 0.8); /* Glowing effect */
+      text-align: center;
     }
 
     .section {
@@ -40,6 +46,7 @@
       border-radius: 25px;
       font-size: 1.2em;
       text-align: center;
+      box-shadow: 0 0 10px rgba(255, 215, 0, 0.8); /* Glowing effect */
     }
 
     .mantra-text {
@@ -52,6 +59,8 @@
       font-size: 2.5em;
       font-family: 'Noto Serif Devanagari', serif;
       margin-top: 20px;
+      color: #D4AF37; /* Gold color */
+      text-shadow: 0 0 15px rgba(255, 215, 0, 0.8); /* Glowing effect */
     }
 
     .result {
@@ -73,6 +82,7 @@
       border-radius: 25px;
       cursor: pointer;
       transition: background-color 0.3s;
+      box-shadow: 0 0 10px rgba(255, 215, 0, 0.8); /* Glowing effect */
     }
 
     button:hover {
@@ -85,12 +95,13 @@
       color: #D4AF37;
       margin-top: 40px;
       font-weight: bold;
+      text-shadow: 0 0 15px rgba(255, 215, 0, 0.8); /* Glowing effect */
     }
   </style>
 </head>
 <body>
 
-  <div class="container">
+  <div class="card">
     <!-- 선택 내용 -->
     <div class="section">
       <h1>당신의 선택:</h1>
