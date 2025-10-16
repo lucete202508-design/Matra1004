@@ -10,10 +10,12 @@
   <link href="https://cdn.jsdelivr.net/gh/sunn-us/SUIT/fonts/variable/woff2/SUIT-Variable.css" rel="stylesheet">
 
   <style>
-    body {
+ body {
   margin: 0;
   padding: 0;
-  background: radial-gradient(circle at center, #4f4b74, #1b1b28 85%);
+  background:
+    radial-gradient(circle at 50% 40%, rgba(220,210,255,0.8) 0%, rgba(180,160,255,0.45) 25%, rgba(120,100,200,0.35) 55%, rgba(50,40,100,0.8) 80%, #0a0813 100%);
+  background-blend-mode: screen;
   color: #fff;
   font-family: 'SUIT Variable', sans-serif;
   display: flex;
@@ -23,6 +25,7 @@
   min-height: 100vh;
   overflow: hidden;
 }
+
 
 
     /* 상단: 선택 영역 */
@@ -209,7 +212,6 @@
 
   <!-- 하단 버튼 -->
   <div class="buttons">
-    <button>사진첩에 저장하기</button>
     <button>다시 하기</button>
     <button>링크 공유하기</button>
     <button>루세테의 원석상점 바로가기</button>
