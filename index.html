@@ -3,139 +3,174 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lucete Mantra Result</title>
+  <title>Lucete Mantra Card</title>
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Pretendard:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Gowun+Dodum&family=Tiro+Devanagari+Sanskrit:wght@600&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/gh/sunn-us/SUIT/fonts/variable/woff2/SUIT-Variable.css" rel="stylesheet">
 
   <style>
     body {
-      font-family: 'Pretendard', sans-serif;
-      background: radial-gradient(circle at center, #fdfcfb 0%, #e2d1c3 25%, #a18cd1 80%);
-      background-size: cover;
-      color: #fff;
       margin: 0;
       padding: 0;
-      height: 100vh;
+      background: radial-gradient(circle at center, #1a1a1f, #0b0b10 80%);
+      color: #fff;
+      font-family: 'SUIT Variable', sans-serif;
       display: flex;
-      justify-content: center;
+      flex-direction: column;
       align-items: center;
+      justify-content: space-between;
+      min-height: 100vh;
       overflow: hidden;
     }
 
-    .card {
-      width: 90%;
-      max-width: 800px;
-      background: rgba(20, 20, 30, 0.55);
-      border-radius: 20px;
-      padding: 40px;
+    /* 상단: 선택 영역 */
+    .selection {
       text-align: center;
-      box-shadow: 0 0 40px rgba(255, 255, 255, 0.3);
-      backdrop-filter: blur(10px);
+      margin-top: 40px;
+      line-height: 1.4;
     }
 
-    h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2em;
-      color: #fff9e9;
-      margin-bottom: 20px;
-      text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+    .selection h2 {
+      font-family: 'SUIT Variable', sans-serif;
+      font-size: 1.5em;
+      color: #f5f5f5;
+      margin-bottom: 10px;
+      text-shadow: 0 0 10px rgba(255,255,255,0.4);
     }
 
-    .section {
-      margin-bottom: 40px;
-    }
-
-    /* 선택 항목 */
-    .selection-box {
+    .choices span {
       display: inline-block;
-      margin: 10px;
-      padding: 12px 25px;
-      border-radius: 25px;
-      font-size: 1.2em;
-      font-family: 'Playfair Display', serif;
-      box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
-    }
-    .state { background-color: #7dd3fc; color:#1e3a8a; }
-    .path { background-color: #c4b5fd; color:#312e81; }
-    .energy { background-color: #f9a8d4; color:#831843; }
-
-    .mantra-text {
-      font-size: 1.2em;
-      font-family: 'Playfair Display', serif;
+      margin: 5px 10px;
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 1em;
       color: #fff;
+      background: rgba(255,255,255,0.1);
+      box-shadow: 0 0 10px rgba(255,255,255,0.3);
     }
 
-    .mantra-text span {
+    /* ✦ Mantra 카드 */
+    .card {
+      position: relative;
+      width: 320px;
+      height: 480px;
+      border-radius: 20px;
+      background: radial-gradient(circle at 50% 40%, rgba(255,255,255,0.15), rgba(30,30,40,0.8)),
+                  url('https://i.ibb.co/X28cMHb/mandala-silver.png'); /* 은빛 만다라 문양 */
+      background-size: cover;
+      background-blend-mode: screen;
+      box-shadow: 0 0 30px rgba(255,255,255,0.3);
+      backdrop-filter: blur(4px);
+      padding: 40px 20px;
+      text-align: center;
+      margin: 40px 0;
+      border: 1px solid rgba(255,255,255,0.4);
+      overflow: hidden;
+    }
+
+    /* 카드 라인 장식 */
+    .card::before,
+    .card::after {
+      content: "~~~~~~~✦~~~~~~~";
       display: block;
-      font-size: 2.3em;
-      margin-top: 15px;
-      color: #fff9e9;
-      text-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
+      color: #e8e8e8;
+      font-size: 1.1em;
+      letter-spacing: 2px;
+      text-shadow: 0 0 10px rgba(255,255,255,0.5);
     }
 
-    .lucete {
-      font-size: 1.7em;
-      font-family: 'Playfair Display', serif;
-      color: #fff9e9;
-      margin-top: 30px;
-      font-weight: bold;
-      text-shadow: 0 0 20px rgba(255,255,255,0.8);
+    .card::before {
+      margin-bottom: 25px;
     }
 
+    .card::after {
+      margin-top: 25px;
+    }
+
+    /* 중심 만트라 */
+    .mantra-hi {
+      font-family: 'Tiro Devanagari Sanskrit', serif;
+      font-size: 2em;
+      color: #e8e8e8;
+      text-shadow: 0 0 15px rgba(255,255,255,0.6);
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .mantra-lat {
+      font-family: 'Great Vibes', cursive;
+      font-size: 1.8em;
+      color: #f0f0f0;
+      text-shadow: 0 0 10px rgba(255,255,255,0.4);
+      margin-bottom: 30px;
+    }
+
+    /* 한글·영문 해석 */
+    .mantra-ko, .mantra-en {
+      font-family: 'Gowun Dodum', sans-serif;
+      font-size: 0.95em;
+      color: #dcdcdc;
+      opacity: 0.9;
+      margin: 4px 0;
+      text-shadow: 0 0 8px rgba(255,255,255,0.3);
+    }
+
+    /* 버튼 영역 */
     .buttons {
-      margin-top: 30px;
+      margin-bottom: 50px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
     }
 
     button {
-      padding: 12px 28px;
-      margin: 8px;
-      font-size: 1.1em;
-      font-family: 'Pretendard', sans-serif;
+      font-family: 'SUIT Variable', sans-serif;
+      font-size: 1em;
+      padding: 10px 20px;
       border: none;
-      color: #2c1810;
-      border-radius: 25px;
+      border-radius: 20px;
+      background: linear-gradient(135deg, #cfcfcf, #9a9a9a);
+      color: #111;
       cursor: pointer;
-      background: linear-gradient(135deg, #fceabb, #f8b500);
-      box-shadow: 0 0 12px rgba(255,255,255,0.3);
+      box-shadow: 0 0 10px rgba(255,255,255,0.4);
       transition: all 0.3s;
     }
 
     button:hover {
+      background: linear-gradient(135deg, #ffffff, #d6d6d6);
+      box-shadow: 0 0 15px rgba(255,255,255,0.6);
       transform: translateY(-2px);
-      box-shadow: 0 0 20px rgba(255,255,255,0.6);
-      background: linear-gradient(135deg, #fff1c1, #ffcd70);
     }
   </style>
 </head>
 <body>
 
+  <!-- 상단 -->
+  <div class="selection">
+    <h2>당신의 선택</h2>
+    <div class="choices">
+      <span>현재 상태: 희망 (Hope)</span>
+      <span>향하는 길: 치유 (Healing)</span>
+      <span>필요한 에너지: 평화 (Peace)</span>
+    </div>
+  </div>
+
+  <!-- 중앙 카드 -->
   <div class="card">
-    <div class="section">
-      <h1>당신의 선택</h1>
-      <p><span class="selection-box state">현재 상태: 희망 (Hope)</span></p>
-      <p><span class="selection-box path">향하는 길: 치유 (Healing)</span></p>
-      <p><span class="selection-box energy">필요한 에너지: 평화 (Peace)</span></p>
-    </div>
+    <div class="mantra-hi">मैं शांति स्वयं हूँ।</div>
+    <div class="mantra-lat">Aham Shanti Asmi</div>
+    <div class="mantra-ko">나는 평화 그 자체입니다.</div>
+    <div class="mantra-en">I am peace itself.</div>
+  </div>
 
-    <div class="section">
-      <h1>Mantra</h1>
-      <div class="mantra-text">
-        <span>मैं शांति स्वयं हूँ।</span>
-        <span>Aham Shanti Asmi</span>
-        <span>나는 평화 그 자체입니다.</span>
-        <span>I am peace itself.</span>
-      </div>
-    </div>
-
-    <div class="lucete">Lucete</div>
-
-    <div class="buttons">
-      <button>사진첩에 저장하기</button>
-      <button>다시 하기</button>
-      <button>링크 공유하기</button>
-      <button>루세테의 원석상점 바로가기</button>
-    </div>
+  <!-- 하단 버튼 -->
+  <div class="buttons">
+    <button>사진첩에 저장하기</button>
+    <button>다시 하기</button>
+    <button>링크 공유하기</button>
+    <button>루세테의 원석상점 바로가기</button>
   </div>
 
 </body>
