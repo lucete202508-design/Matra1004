@@ -67,17 +67,30 @@ body {
 
 
     /* ✦ Mantra 카드 */
- .card {
+.card {
   position: relative;
-  width: 360px;
-  height: 520px;
+  width: 80vw;   /* 💫 화면의 80% 크기 — 테두리보다 살짝 작게 */
+  max-width: 480px;  /* 💡 데스크탑 기준 최대 크기 제한 */
+  height: auto;  /* PNG 비율 자동 유지 */
+  aspect-ratio: 2 / 3; /* 📐 카드 비율 일정하게 */
+  
+  margin: 0 auto;
   border-radius: 20px;
-  background: url('matra_bg.png') center/contain no-repeat;  /* 🌟 배경만 표시 */
-  box-shadow: 0 0 30px rgba(255,255,255,0.3);
-  border: none; /* 필요시 제거 */
+  
+  background: url('matra_bg.png') center center / contain no-repeat;
+  background-blend-mode: normal;
+  box-shadow: 0 0 40px rgba(255, 255, 255, 0.3);
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+  text-align: center;
+  border: none;
   backdrop-filter: none;
-  background-blend-mode: normal;  /* ✨ 필름 효과 제거 */
 }
+
 
 
 /* ✨ Mantra 제목 */
