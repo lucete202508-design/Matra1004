@@ -52,41 +52,39 @@
 
     /* ✦ Mantra 카드 */
     .card {
-      position: relative;
-      width: 320px;
-      height: 480px;
-      border-radius: 20px;
-      background: radial-gradient(circle at 50% 40%, rgba(255,255,255,0.15), rgba(30,30,40,0.8)),
-                  url('lucete_mantra_bg.png'); /* 루세테 배경 이미지 */
-      background-size: cover;
-      background-position: center;
-      background-blend-mode: screen;
-      box-shadow: 0 0 30px rgba(255,255,255,0.3);
-      backdrop-filter: blur(4px);
-      text-align: center;
-      margin: 40px 0;
-      border: 1px solid rgba(255,255,255,0.4);
-      overflow: hidden;
+  position: relative;
+  width: 320px;
+  height: 480px;
+  border-radius: 20px;
+  background: radial-gradient(circle at 50% 40%, rgba(255,255,255,0.15), rgba(30,30,40,0.8)),
+              url('lucete_mantra_bg.png');
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: screen;
+  box-shadow: 0 0 30px rgba(255,255,255,0.3);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255,255,255,0.4);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 20px 40px;
+  text-align: center;
+}
 
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-
-      padding: 80px 20px 40px;
-    }
-
-    /* Mantra 타이틀 */
-   .mantra-title {
+/* ✨ Mantra 제목 */
+.mantra-title {
   font-family: 'Cinzel Decorative', serif;
   font-size: 1.6em;
   letter-spacing: 2px;
   color: #eaeaea;
   text-shadow: 0 0 10px rgba(255,255,255,0.4);
-  
-  position: relative;
-  top: -20px;           /* ⬅ 이게 핵심: 위로 살짝 이동 */
-  margin-bottom: 10px;  /* 아래 여백 줄여서 간격 균형 */
+
+  position: absolute;
+  top: 40px;     /* 👈 카드 상단으로 고정 */
+  left: 50%;
+  transform: translateX(-50%);
 }
 
     /* 중심 만트라 */
