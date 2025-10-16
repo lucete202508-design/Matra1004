@@ -19,10 +19,11 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start; /* ⬅ 중앙정렬 대신 위쪽부터 배치 */
   min-height: 100vh;
-  overflow: hidden;
+  overflow-x: hidden; /* ⬅ 가로 스크롤만 막고, 세로는 허용 */
 }
+
 
 
 
