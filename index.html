@@ -67,27 +67,18 @@ body {
 
 
     /* ✦ Mantra 카드 */
-    .card {
+ .card {
   position: relative;
-  width: 320px;
-  height: 480px;
+  width: 360px;
+  height: 520px;
   border-radius: 20px;
-  background: radial-gradient(circle at 50% 40%, rgba(255,255,255,0.15), rgba(30,30,40,0.8)),
-              url('matra_bg.png');
-  background-size: cover;
-  background-position: center;
-  background-blend-mode: screen;
+  background: url('matra_bg.png') center/contain no-repeat;  /* 🌟 배경만 표시 */
   box-shadow: 0 0 30px rgba(255,255,255,0.3);
-  backdrop-filter: blur(4px);
-  border: 1px solid rgba(255,255,255,0.4);
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 80px 20px 40px;
-  text-align: center;
+  border: none; /* 필요시 제거 */
+  backdrop-filter: none;
+  background-blend-mode: normal;  /* ✨ 필름 효과 제거 */
 }
+
 
 /* ✨ Mantra 제목 */
 .mantra-title {
