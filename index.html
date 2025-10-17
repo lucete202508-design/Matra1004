@@ -44,7 +44,7 @@ body {
   font-family: 'SUIT Variable', sans-serif;
   min-height: 100vh;
   overflow-x: hidden;
-  text-align: center; /* ✅ 중앙 정렬 유지 */
+  text-align: center; 
 }
 
 
@@ -52,7 +52,7 @@ body {
 
 
 
-    /* 상단: 선택 영역 */
+ 
     .selection {
       text-align: center;
       margin-top: 40px;
@@ -80,7 +80,7 @@ body {
 
     .mantra-heading {
   font-family: 'SUIT Variable', sans-serif;
-  font-size: 1.5em;  /* 👈 크기 조절: h2(당신의 선택)와 동일 */
+  font-size: 1.5em;  
   color: #f5f5f5;
   margin-top: 40px;
   margin-bottom: 10px;
@@ -91,7 +91,7 @@ body {
 }
 
 
-/* ✦ Mantra 카드 프레임 */
+
 .card-frame {
   position: relative;
   width: 340px;
@@ -100,7 +100,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0 auto; /* ✅ 중앙정렬 추가 */
+  margin: 0 auto; 
 }
 
 
@@ -111,10 +111,10 @@ body {
   height: 480px;
   border-radius: 24px;
   margin-top: 40px;
-  background: rgba(10, 5, 25, 0.25); /* ✨ 살짝 더 투명하게 */
+  background: rgba(10, 5, 25, 0.25); 
   backdrop-filter: blur(8px);
 
-  /* ✨ 메인: 내부+외부 발광 효과 */
+  
   border: 1.5px solid rgba(255, 255, 255, 0.25);
   box-shadow:
     0 0 25px rgba(180, 150, 255, 0.5),
@@ -123,7 +123,7 @@ body {
     inset 0 0 20px rgba(255, 255, 255, 0.1),
     inset 0 0 30px rgba(200, 180, 255, 0.15);
 
-  /* ✨ 오로라 라인 효과 */
+ 
   background-image: radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.15), transparent 70%);
   
   display: flex;
@@ -137,7 +137,7 @@ body {
 
 
 
-/* 카드 내용 위로 */
+
 .card > * {
   position: relative;
   z-index: 1;
@@ -148,7 +148,7 @@ body {
 
 
 
-/* ✨ Mantra 제목 */
+
 .mantra-title {
   font-family: 'Cinzel Decorative', serif;
   font-size: 1.6em;
@@ -162,7 +162,7 @@ body {
   display: inline-block;
 }
 
-/* ✦ Mantra ✦ */
+
 .mantra-title::before,
 .mantra-title::after {
   content: "✦";
@@ -174,7 +174,6 @@ body {
 
 
 
-    /* 중심 만트라 */
     .mantra-hi {
       font-family: 'Tiro Devanagari Sanskrit', serif;
       font-size: 2em;
@@ -192,7 +191,6 @@ body {
       margin-bottom: 30px;
     }
 
-    /* 한글·영문 해석 */
     .mantra-ko {
       font-family: 'Gowun Dodum', sans-serif;
       font-size: 0.95em;
@@ -236,7 +234,6 @@ body {
 
 
 
-    /* 버튼 영역 */
  button {
   font-family: 'SUIT Variable', sans-serif;
   font-size: 1em;
@@ -254,19 +251,19 @@ body {
   backdrop-filter: blur(4px);
 }
 
-/* 👇 버튼 눌렀을 때 (터치 시) */
+
 button:active {
   background: linear-gradient(135deg, rgba(180,150,255,0.6), rgba(255,240,255,0.5));
   box-shadow:
     0 0 35px rgba(220,200,255,0.7),
     0 0 60px rgba(200,180,255,0.4);
-  transform: scale(0.97); /* 살짝 눌리는 느낌 */
+  transform: scale(0.97); 
 }
     
-/* 버튼 묶음 영역 (세 개 버튼 감싸는 div) */
+
 .buttons {
-  margin-top: 100px; /* 👈 카드와 버튼 사이 간격 */
-  margin-bottom: 100px; /* 화면 아래쪽 여백 */
+  margin-top: 100px; 
+  margin-bottom: 100px; 
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -302,7 +299,7 @@ button:active {
   </div>
 </div>
 
-  <!-- ✨ 캡처 안내 문구 -->
+  
 <p style="
   font-family: 'SUIT Variable', sans-serif;
   font-size: 0.95em;
@@ -316,7 +313,7 @@ button:active {
 </p>
 
 
-  <!-- 하단 버튼 -->
+  
 <div class="buttons">
   <button onclick="restart()">다시 하기</button>
   <button onclick="shareLink()">링크 공유하기</button>
@@ -337,7 +334,7 @@ function restart() {
 
 
   
-// 📤 테스트 시작 페이지 공유
+
 function shareLink() {
   const url = "https://lucete202508-design.github.io/Matra1004/state.html";
   navigator.clipboard.writeText(url).then(() => {
@@ -348,13 +345,13 @@ function shareLink() {
 }
 
 
-// 💎 루세테의 원석상점 바로가기
+
 function goLucete() {
   window.open("https://naver.me/xPUP0TSz", "_blank");
 }
 
   
-// 🌿 Lucete Mantra Dictionary
+
 const mantraDict = {
   "불안": { en: "Anxiety", sa: "Chinta", dev: "चिन्ता" },
   "혼란": { en: "Confusion", sa: "Moha", dev: "मोह" },
@@ -398,23 +395,23 @@ const mantraDict = {
 
 };
 
-// 🔹 변환 함수
+
 function getMantraWord(kor) {
   return mantraDict[kor] || { en: kor, sa: kor, dev: kor };
 }
 
 
-// 🪶 한글 조사 자동 처리 (을/를, 은/는, 이/가, 와/과, 으로/로)
+
 function particle(word, pair) {
   const lastChar = word[word.length - 1];
   const uni = lastChar.charCodeAt(0);
 
   if (uni < 0xac00 || uni > 0xd7a3) return word + pair[1]; // 한글 아님
 
-  const jong = (uni - 0xac00) % 28; // 종성 분리
+  const jong = (uni - 0xac00) % 28; 
   const hasJong = jong !== 0;
 
-  // “으로/로” 특수규칙: 받침이 ㄹ이면 ‘로’
+ 
   if (pair[0] === "으로" && pair[1] === "로") {
     const isRieul = jong === 8;
     return word + (hasJong && !isRieul ? pair[0] : pair[1]);
@@ -424,7 +421,7 @@ function particle(word, pair) {
 }
 
 
-// 🔹 문장 생성
+
 function generateMantra(state, path, energy) {
   const sState = getMantraWord(state);
   const sPath = getMantraWord(path);
@@ -459,7 +456,7 @@ const templatesKo = [
 }
 
 
-// 🔹 산스크리트 만트라 생성
+
 function generateSanskrit(state, path, energy) {
   const sState = getMantraWord(state);
   const sPath = getMantraWord(path);
@@ -486,7 +483,7 @@ function generateSanskrit(state, path, energy) {
   return { dev: formsDev[index], lat: formsLat[index] };
 }
 
-// 🔹 DOM 렌더링
+
 document.addEventListener("DOMContentLoaded", () => {
   document.querySelector(".choices").innerHTML = `
     <span>현재 상태: ${state}</span>
@@ -508,7 +505,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-  // 📊 Google Analytics 버튼 클릭 분석
+  
 document.querySelectorAll(".buttons button").forEach((btn) => {
   btn.addEventListener("click", () => {
     gtag("event", "button_click", {
