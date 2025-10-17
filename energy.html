@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lucéte | 필요한 에너지 선택</title>
+
+  <link href="https://cdn.jsdelivr.net/gh/sunn-us/SUIT/fonts/variable/woff2/SUIT-Variable.css" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: url('background.png') center/cover no-repeat;
+      color: #fff;
+      font-family: 'SUIT Variable', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+      text-align: center;
+      overflow-x: hidden;
+    }
+
+    h2 {
+      margin-top: 60px;
+      font-size: 1.6em;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-shadow: 0 0 20px rgba(255,230,180,0.8);
+    }
+
+    .subtext {
+      font-size: 0.95em;
+      opacity: 0.9;
+      margin-bottom: 40px;
+      text-shadow: 0 0 10px rgba(255,240,200,0.5);
+    }
+
+    .energy-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      width: 90%;
+      max-width: 380px;
+      justify-items: center;
+    }
+
+    .energy-grid button {
+      font-family: 'SUIT Variable', sans-serif;
+      font-size: 0.95em;
+      padding: 12px 0;
+      width: 110px;
+      border-radius: 18px;
+      border: 1px solid rgba(255,240,200,0.5); /* 💛 금빛 테두리 */
+      color: #fff;
+      background: rgba(255,255,200,0.1);
+      backdrop-filter: blur(8px);
+      box-shadow:
+        0 0 18px rgba(255,240,180,0.3),
+        inset 0 0 14px rgba(255,255,255,0.08);
+      transition: all 0.3s ease;
+      letter-spacing: 0.5px;
+    }
+
+    .energy-grid button:active {
+      background: rgba(255,255,220,0.25);
+      box-shadow:
+        0 0 35px rgba(255,240,180,0.6),
+        inset 0 0 18px rgba(255,255,255,0.25);
+      transform: scale(0.97);
+    }
+
+    .btn-ko {
+      display: block;
+      font-size: 1em;
+    }
+
+    .btn-en {
+      display: block;
+      font-size: 0.75em;
+      opacity: 0.85;
+      letter-spacing: 0.5px;
+      color: rgba(255,245,200,0.9);
+    }
+
+    footer {
+      margin-top: 80px;
+      font-size: 0.8em;
+      color: rgba(255,250,220,0.7);
+      text-shadow: 0 0 12px rgba(255,245,200,0.5);
+    }
+  </style>
+</head>
+
+<body>
+  <h2>당신에게 필요한 에너지를 선택하세요</h2>
+  <p class="subtext">지금 당신의 길에 가장 필요한 에너지를 골라주세요.</p>
+
+  <div class="energy-grid">
+    <button onclick="selectEnergy('평화')"><span class="btn-ko">평화</span><span class="btn-en">Peace</span></button>
+    <button onclick="selectEnergy('희망')"><span class="btn-ko">희망</span><span class="btn-en">Hope</span></button>
+    <button onclick="selectEnergy('빛')"><span class="btn-ko">빛</span><span class="btn-en">Light</span></button>
+    <button onclick="selectEnergy('강인함')"><span class="btn-ko">강인함</span><span class="btn-en">Strength</span></button>
+    <button onclick="selectEnergy('영감')"><span class="btn-ko">영감</span><span class="btn-en">Inspiration</span></button>
+    <button onclick="selectEnergy('용기')"><span class="btn-ko">용기</span><span class="btn-en">Courage</span></button>
+    <button onclick="selectEnergy('믿음')"><span class="btn-ko">믿음</span><span class="btn-en">Faith</span></button>
+    <button onclick="selectEnergy('사랑')"><span class="btn-ko">사랑</span><span class="btn-en">Love</span></button>
+    <button onclick="selectEnergy('자비')"><span class="btn-ko">자비</span><span class="btn-en">Compassion</span></button>
+    <button onclick="selectEnergy('행복')"><span class="btn-ko">행복</span><span class="btn-en">Happiness</span></button>
+    <button onclick="selectEnergy('조화')"><span class="btn-ko">조화</span><span class="btn-en">Harmony</span></button>
+    <button onclick="selectEnergy('기쁨')"><span class="btn-ko">기쁨</span><span class="btn-en">Joy</span></button>
+  </div>
+
+  <footer>© Lucéte 2025</footer>
+
+  <script>
+    function selectEnergy(value) {
+      localStorage.setItem("selectedEnergy", value);
+      window.location.href = "index.html"; // 결과 카드 페이지로 이동
+    }
+  </script>
+</body>
+</html>
