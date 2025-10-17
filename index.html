@@ -86,13 +86,14 @@ body {
   border-radius: 24px;
   margin-top: 40px;
 
-  background: rgba(0, 0, 0, 0.45);
+  /* ✨ 살짝 더 투명하게 조정 */
+  background: rgba(0, 0, 0, 0.35); /* 0.45 → 0.35 로 줄임 */
   backdrop-filter: blur(6px);
 
-  /* ✨ 빛나는 오로라 테두리 */
+  /* ✨ 빛나는 테두리 유지 */
   border: 2px solid transparent;
   background-image:
-    linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+    linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
     linear-gradient(135deg, #d8baff, #a4b9ff, #e6d8ff);
   background-origin: border-box;
   background-clip: padding-box, border-box;
@@ -109,6 +110,7 @@ body {
   text-align: center;
   overflow: hidden;
 }
+
 
 
 
@@ -191,7 +193,7 @@ body {
 
     /* 버튼 영역 */
     .buttons {
-      margin-bottom: 60px;
+      margin-bottom: 80px;
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
