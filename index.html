@@ -86,16 +86,25 @@ body {
   width: 320px;
   height: 480px;
   border-radius: 24px;
-  background: rgba(0, 0, 0, 0.45); /* ✅ 반투명 어두운 배경 */
-  box-shadow: 0 0 80px rgba(255, 255, 255, 0.4);
+  margin-top: 40px;
+
+  background: rgba(0, 0, 0, 0.45); /* ✨ 어두운 반투명 카드 배경 */
+  box-shadow:
+    0 0 20px rgba(255, 255, 255, 0.2),
+    0 0 40px rgba(180, 160, 255, 0.3),
+    inset 0 0 15px rgba(200, 180, 255, 0.2); /* ✨ 안쪽 은은한 빛 */
+
+  border: 2px solid rgba(255, 255, 255, 0.6); /* 💫 반투명한 빛 테두리 */
+  backdrop-filter: blur(4px);
+
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  border: none;
   overflow: hidden;
 }
+
 
 /* 카드 내용 위로 */
 .card > * {
