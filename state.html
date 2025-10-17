@@ -38,13 +38,16 @@ body {
       text-shadow: 0 0 8px rgba(255,255,255,0.3);
     }
 
-    .state-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
-      gap: 14px;
-      width: 90%;
-      max-width: 400px;
-    }
+.state-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  gap: 14px;
+  width: 90%;
+  max-width: 400px;
+  margin: 0 auto; /* ✅ 이 한 줄이 핵심: 가운데 정렬 */
+  justify-items: center; /* ✅ 버튼들까지 딱 중앙으로 */
+}
+
 
     .state-grid button {
       font-family: 'SUIT Variable', sans-serif;
