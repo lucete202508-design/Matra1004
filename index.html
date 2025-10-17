@@ -67,39 +67,36 @@ body {
 }
 
 
-    /* ✦ Mantra 카드 */
+/* ✦ Mantra 카드 프레임 */
+.card-frame {
+  position: relative;
+  width: 340px;  /* 카드보다 살짝 큼 */
+  height: 500px;
+  background: url('matra_bg.png') center center no-repeat;
+  background-size: contain; /* ✅ 프레임 잘리지 않게 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ✦ 카드 본체 (검은 반투명 영역 + 내용) */
 .card {
   position: relative;
-  width: 320px;           /* 카드 기본 크기 유지 */
+  width: 320px;
   height: 480px;
   border-radius: 24px;
-  margin-top: 40px;
-
-  background: url('matra_bg.png') center center no-repeat;
-  background-size: 135% 104%;   /* 💥 가로 30% 확대, 세로 50% 확대 */
-  background-blend-mode: normal;
-
+  background: rgba(0, 0, 0, 0.45); /* ✅ 반투명 어두운 배경 */
   box-shadow: 0 0 80px rgba(255, 255, 255, 0.4);
-
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
   text-align: center;
   border: none;
-  backdrop-filter: none;
+  overflow: hidden;
 }
 
-    .card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.5); /* ← 어둡기 조절 (0.3~0.5 추천) */
-  border-radius: inherit;
-  z-index: 0;
-}
-
+/* 카드 내용 위로 */
 .card > * {
   position: relative;
   z-index: 1;
@@ -221,6 +218,7 @@ body {
     
 
   <!-- 중앙 카드 -->
+<div class="card-frame">
   <div class="card">
     <div class="mantra-title">Mantra</div>
     <div class="mantra-hi">मैं शांति स्वयं हूँ।</div>
@@ -229,6 +227,8 @@ body {
     <div class="mantra-en">I am peace itself.</div>
     <div class="lucete-sign">Lucéte</div>
   </div>
+</div>
+
 
   <!-- 하단 버튼 -->
   <div class="buttons">
