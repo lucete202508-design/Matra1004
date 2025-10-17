@@ -70,14 +70,15 @@ body {
 /* ✦ Mantra 카드 프레임 */
 .card-frame {
   position: relative;
-  width: 340px;  /* 카드보다 살짝 큼 */
+  width: 340px;
   height: 500px;
   background: url('matra_bg.png') center center no-repeat;
-  background-size: contain; /* ✅ 프레임 잘리지 않게 */
+  background-size: cover; /* ✅ contain → cover 로 변경 */
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 
 /* ✦ 카드 본체 (검은 반투명 영역 + 내용) */
 .card {
