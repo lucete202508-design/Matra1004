@@ -279,11 +279,12 @@ button:active {
 
 
   <!-- 하단 버튼 -->
-  <div class="buttons">
-    <button>다시 하기</button>
-    <button>링크 공유하기</button>
-    <button>루세테의 원석상점 바로가기</button>
-  </div>
+<div class="buttons">
+  <button onclick="restart()">다시 하기</button>
+  <button onclick="shareLink()">링크 공유하기</button>
+  <button onclick="goLucete()">루세테의 원석상점 바로가기</button>
+</div>
+
 
 <script>
 const state = localStorage.getItem("selectedState") || "—";
