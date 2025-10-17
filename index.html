@@ -16,11 +16,11 @@ body {
   background: url('background.png') center/cover no-repeat;
   color: #fff;
   font-family: 'SUIT Variable', sans-serif;
- 
-  justify-content: flex-start; /* ⬅ 중앙정렬 대신 위쪽부터 배치 */
   min-height: 100vh;
-  overflow-x: hidden; /* ⬅ 가로 스크롤만 막고, 세로는 허용 */
+  overflow-x: hidden;
+  text-align: center; /* ✅ 중앙 정렬 유지 */
 }
+
 
 
 
@@ -188,6 +188,7 @@ body {
 
     /* 버튼 영역 */
     .buttons {
+      margin-top: 120px; 
       margin-bottom: 100px;
       display: flex;
       flex-wrap: wrap;
