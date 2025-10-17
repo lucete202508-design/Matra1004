@@ -115,11 +115,24 @@
 
   <footer>© Lucéte 2025</footer>
 
-  <script>
-    function selectEnergy(value) {
-      localStorage.setItem("selectedEnergy", value);
-      window.location.href = "index.html"; // 결과 카드 페이지로 이동
+ <script>
+  function selectEnergy(value) {
+    // ① 에너지 저장
+    localStorage.setItem("selectedEnergy", value);
+
+    // ② 혹시 이전 단계(path, state)가 비어 있으면 경고 (선택 안 하고 직접 접근 시)
+    const state = localStorage.getItem("selectedState");
+    const path = localStorage.getItem("selectedPath");
+    if (!state || !path) {
+      alert("⚠️ 앞 단계 선택이 없습니다. 처음부터 다시 진행해주세요.");
+      window.location.href = "state.html";
+      return;
     }
-  </script>
+
+    // ③ 결과 페이지로 이동
+    window.location.href = "index.html";
+  }
+</script>
+
 </body>
 </html>
