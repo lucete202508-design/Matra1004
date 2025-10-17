@@ -129,11 +129,21 @@ body {
   letter-spacing: 2px;
   color: #eaeaea;
   text-shadow: 0 0 10px rgba(255,255,255,0.4);
-
   position: absolute;
-  top: 40px;     /* 👈 카드 상단으로 고정 */
+  top: 40px;
   left: 50%;
   transform: translateX(-50%);
+  display: inline-block;
+}
+
+/* ✦ Mantra ✦ */
+.mantra-title::before,
+.mantra-title::after {
+  content: "✦";
+  color: rgba(200,180,255,0.8);
+  text-shadow: 0 0 12px rgba(200,180,255,0.5);
+  margin: 0 8px;
+  font-size: 0.9em;
 }
 
 
@@ -175,17 +185,29 @@ body {
       margin: 4px 0;
     }
 
-    .lucete-sign {
+.lucete-sign {
   font-family: 'Alex Brush', cursive;
   font-size: 1.6em;
   color: #eaeaea;
   position: absolute;
-  bottom: 45px;              /* 카드 하단 금빛 장식 바로 위 */
+  bottom: 45px;
   left: 50%;
   transform: translateX(-50%);
   text-shadow: 0 0 12px rgba(255,255,255,0.4);
   letter-spacing: 4px;
+  display: inline-block;
 }
+
+/* ✧ Lucéte ✧ */
+.lucete-sign::before,
+.lucete-sign::after {
+  content: "✧";
+  color: rgba(200,180,255,0.8);
+  text-shadow: 0 0 10px rgba(200,180,255,0.5);
+  margin: 0 8px;
+  font-size: 0.9em;
+}
+
 
 
     /* 버튼 영역 */
