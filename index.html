@@ -10,6 +10,7 @@
   <link href="https://cdn.jsdelivr.net/gh/sunn-us/SUIT/fonts/variable/woff2/SUIT-Variable.css" rel="stylesheet">
 
   <style>
+    
 body {
   margin: 0;
   padding: 0;
@@ -284,5 +285,23 @@ button:active {
     <button>루세테의 원석상점 바로가기</button>
   </div>
 
+    <script>
+    const state = localStorage.getItem("selectedState") || "—";
+    const path = localStorage.getItem("selectedPath") || "—";
+    const energy = localStorage.getItem("selectedEnergy") || "—";
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const choicesDiv = document.querySelector(".choices");
+      if (choicesDiv) {
+        choicesDiv.innerHTML = `
+          <span>현재 상태: ${state}</span>
+          <span>향하는 길: ${path}</span>
+          <span>필요한 에너지: ${energy}</span>
+        `;
+      }
+    });
+  </script>
 </body>
 </html>
+
+
