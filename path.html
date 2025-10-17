@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lucéte | 향하는 길 선택</title>
+
+  <link href="https://cdn.jsdelivr.net/gh/sunn-us/SUIT/fonts/variable/woff2/SUIT-Variable.css" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: url('background.png') center/cover no-repeat;
+      color: #fff;
+      font-family: 'SUIT Variable', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+      text-align: center;
+      overflow-x: hidden;
+    }
+
+    h2 {
+      margin-top: 60px;
+      font-size: 1.6em;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-shadow: 0 0 20px rgba(160,180,255,0.8);
+    }
+
+    .subtext {
+      font-size: 0.95em;
+      opacity: 0.9;
+      margin-bottom: 40px;
+      text-shadow: 0 0 12px rgba(150,170,255,0.5);
+    }
+
+    .path-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      width: 90%;
+      max-width: 380px;
+      justify-items: center;
+    }
+
+    .path-grid button {
+      font-family: 'SUIT Variable', sans-serif;
+      font-size: 0.95em;
+      padding: 12px 0;
+      width: 110px;
+      border-radius: 18px;
+      border: 1px solid rgba(150,170,255,0.5); /* 💙 남보라빛 테두리 */
+      color: #fff;
+      background: rgba(255,255,255,0.08);
+      backdrop-filter: blur(8px);
+      box-shadow:
+        0 0 18px rgba(120,140,255,0.3),
+        inset 0 0 14px rgba(255,255,255,0.08);
+      transition: all 0.3s ease;
+      letter-spacing: 0.5px;
+    }
+
+    .path-grid button:active {
+      background: rgba(255,255,255,0.18);
+      box-shadow:
+        0 0 28px rgba(140,160,255,0.6),
+        inset 0 0 18px rgba(200,210,255,0.2);
+      transform: scale(0.97);
+    }
+
+    .btn-ko {
+      display: block;
+      font-size: 1em;
+    }
+
+    .btn-en {
+      display: block;
+      font-size: 0.75em;
+      opacity: 0.85;
+      letter-spacing: 0.5px;
+      color: rgba(190,200,255,0.9);
+    }
+
+    footer {
+      margin-top: 80px;
+      font-size: 0.8em;
+      color: rgba(210,220,255,0.6);
+      text-shadow: 0 0 12px rgba(180,190,255,0.4);
+    }
+  </style>
+</head>
+
+<body>
+  <h2>당신이 향하는 길을 선택하세요</h2>
+  <p class="subtext">지금 당신이 마음속으로 향하고 있는 방향을 골라주세요.</p>
+
+  <div class="path-grid">
+    <button onclick="selectPath('치유')"><span class="btn-ko">치유</span><span class="btn-en">Healing</span></button>
+    <button onclick="selectPath('성장')"><span class="btn-ko">성장</span><span class="btn-en">Growth</span></button>
+    <button onclick="selectPath('자유')"><span class="btn-ko">자유</span><span class="btn-en">Freedom</span></button>
+    <button onclick="selectPath('용서')"><span class="btn-ko">용서</span><span class="btn-en">Forgiveness</span></button>
+    <button onclick="selectPath('깨달음')"><span class="btn-ko">깨달음</span><span class="btn-en">Awakening</span></button>
+    <button onclick="selectPath('회복')"><span class="btn-ko">회복</span><span class="btn-en">Recovery</span></button>
+    <button onclick="selectPath('자신감')"><span class="btn-ko">자신감</span><span class="btn-en">Confidence</span></button>
+    <button onclick="selectPath('균형')"><span class="btn-ko">균형</span><span class="btn-en">Balance</span></button>
+    <button onclick="selectPath('사랑')"><span class="btn-ko">사랑</span><span class="btn-en">Love</span></button>
+    <button onclick="selectPath('이해')"><span class="btn-ko">이해</span><span class="btn-en">Understanding</span></button>
+    <button onclick="selectPath('용기')"><span class="btn-ko">용기</span><span class="btn-en">Courage</span></button>
+    <button onclick="selectPath('내면의 평화')"><span class="btn-ko">내면의 평화</span><span class="btn-en">Inner Peace</span></button>
+  </div>
+
+  <footer>© Lucéte 2025</footer>
+
+  <script>
+    function selectPath(value) {
+      localStorage.setItem("selectedPath", value);
+      window.location.href = "energy.html"; // 다음 단계로 이동
+    }
+  </script>
+</body>
+</html>
