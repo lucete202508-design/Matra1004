@@ -364,21 +364,31 @@ function getMantraWord(kor) {
   return mantraDict[kor] || { en: kor, sa: kor, dev: kor };
 }
 
+  // 🪶 한글 조사 자동 처리
+function particle(word, particleType) {
+  const lastChar = word[word.length - 1];
+  const uni = lastChar.charCodeAt(0);
+  if (uni < 0xac00 || uni > 0xd7a3) return word + particleType[1]; // 한글 아님
+  const hasJong = (uni - 0xac00) % 28 !== 0;
+  return word + (hasJong ? particleType[0] : particleType[1]);
+}
+
 // 🔹 문장 생성
 function generateMantra(state, path, energy) {
   const sState = getMantraWord(state);
   const sPath = getMantraWord(path);
   const sEnergy = getMantraWord(energy);
 
-  const templatesKo = [
-    `나는 ${state} 속에서 ${path}의 길을 걷고 있다.`,
-    `나는 ${energy}와 함께 ${path}의 여정을 시작한다.`,
-    `나는 ${state}를 지나 ${path}로 나아간다.`,
-    `나는 ${energy} 속에서 ${path}을(를) 배운다.`,
-    `나는 ${energy}의 빛으로 ${path}를 향해 간다.`,
-    `나는 ${path}의 시간 속에서 ${energy}를 느낀다.`,
-    `나는 ${energy}를 품고 ${path}로 향한다.`
-  ];
+const templatesKo = [
+  `나는 ${state} 속에서 ${path}의 길을 걷고 있다.`,
+  `나는 ${energy}와 함께 ${path}의 여정을 시작한다.`,
+  `나는 ${particle(state, ["을", "를"])} 지나 ${path}로 나아간다.`,
+  `나는 ${energy} 속에서 ${particle(path, ["을", "를"])} 배운다.`,
+  `나는 ${energy}의 빛으로 ${particle(path, ["을", "를"])} 향해 간다.`,
+  `나는 ${path}의 시간 속에서 ${particle(energy, ["을", "를"])} 느낀다.`,
+  `나는 ${particle(energy, ["을", "를"])} 품고 ${path}로 향한다.`
+];
+
 
   const templatesEn = [
     `I walk the path of ${sPath.en} through ${sEnergy.en}.`,
