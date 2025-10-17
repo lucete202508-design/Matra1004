@@ -285,21 +285,59 @@ button:active {
     <button>루세테의 원석상점 바로가기</button>
   </div>
 
-    <script>
-    const state = localStorage.getItem("selectedState") || "—";
-    const path = localStorage.getItem("selectedPath") || "—";
-    const energy = localStorage.getItem("selectedEnergy") || "—";
+  <script>
+  // 선택값 불러오기
+  const state = localStorage.getItem("selectedState") || "—";
+  const path = localStorage.getItem("selectedPath") || "—";
+  const energy = localStorage.getItem("selectedEnergy") || "—";
 
-    document.addEventListener("DOMContentLoaded", () => {
-      const choicesDiv = document.querySelector(".choices");
-      if (choicesDiv) {
-        choicesDiv.innerHTML = `
-          <span>현재 상태: ${state}</span>
-          <span>향하는 길: ${path}</span>
-          <span>필요한 에너지: ${energy}</span>
-        `;
-      }
-    });
+  // 🌟 만트라 자동 생성 로직
+  function generateMantra(state, path, energy) {
+    const templatesKo = [
+      `나는 ${energy} 속에서 ${path}되고 있다.`,
+      `나는 ${path}의 길 위에서 ${energy}를 느낀다.`,
+      `나는 ${state} 속에서 ${energy}를 찾아간다.`,
+      `나는 ${energy}로 ${path}의 문을 연다.`,
+      `나는 ${energy}와 함께 ${path}의 여정을 걷는다.`
+    ];
+
+    const templatesEn = [
+      `I am walking the path of ${path} with ${energy}.`,
+      `I am becoming one with ${energy}.`,
+      `I am finding ${energy} through ${path}.`,
+      `I am growing beyond ${state}, into ${energy}.`,
+      `I am surrounded by ${energy}, moving toward ${path}.`
+    ];
+
+    return {
+      ko: templatesKo[Math.floor(Math.random() * templatesKo.length)],
+      en: templatesEn[Math.floor(Math.random() * templatesEn.length)]
+    };
+  }
+
+  // 🌙 페이지 로드 후 실행
+  document.addEventListener("DOMContentLoaded", () => {
+    // 선택값 표시
+    const choicesDiv = document.querySelector(".choices");
+    if (choicesDiv) {
+      choicesDiv.innerHTML = `
+        <span>현재 상태: ${state}</span>
+        <span>향하는 길: ${path}</span>
+        <span>필요한 에너지: ${energy}</span>
+      `;
+    }
+
+    // 만트라 생성 및 표시
+    const mantraKo = document.querySelector(".mantra-ko");
+    const mantraEn = document.querySelector(".mantra-en");
+    if (mantraKo && mantraEn) {
+      const mantra = generateMantra(state, path, energy);
+      mantraKo.textContent = mantra.ko;
+      mantraEn.textContent = mantra.en;
+    }
+  });
+</script>
+
 
 
         // 🌟 만트라 자동 생성 로직
