@@ -339,6 +339,10 @@ function getMantraWord(kor) {
 
 // 🔹 문장 생성
 function generateMantra(state, path, energy) {
+  const sState = getMantraWord(state);
+  const sPath = getMantraWord(path);
+  const sEnergy = getMantraWord(energy);
+
   const templatesKo = [
     `나는 ${state} 속에서 ${path}의 길을 걷고 있다.`,
     `나는 ${energy}와 함께 ${path}의 여정을 시작한다.`,
@@ -348,20 +352,23 @@ function generateMantra(state, path, energy) {
     `나는 ${path}의 시간 속에서 ${energy}를 느낀다.`,
     `나는 ${energy}를 품고 ${path}로 향한다.`
   ];
+
   const templatesEn = [
-    `I walk the path of ${path} through ${energy}.`,
-    `I begin the journey of ${path} with ${energy}.`,
-    `I move beyond ${state}, into ${path}.`,
-    `I learn ${path} through the light of ${energy}.`,
-    `I carry ${energy} as I walk toward ${path}.`,
-    `I am surrounded by ${energy}, becoming ${path}.`,
-    `I grow from ${state} toward ${path} with ${energy}.`
+    `I walk the path of ${sPath.en} through ${sEnergy.en}.`,
+    `I begin the journey of ${sPath.en} with ${sEnergy.en}.`,
+    `I move beyond ${sState.en}, into ${sPath.en}.`,
+    `I learn ${sPath.en} through the light of ${sEnergy.en}.`,
+    `I carry ${sEnergy.en} as I walk toward ${sPath.en}.`,
+    `I am surrounded by ${sEnergy.en}, becoming ${sPath.en}.`,
+    `I grow from ${sState.en} toward ${sPath.en} with ${sEnergy.en}.`
   ];
+
   return {
     ko: templatesKo[Math.floor(Math.random() * templatesKo.length)],
     en: templatesEn[Math.floor(Math.random() * templatesEn.length)]
   };
 }
+
 
 // 🔹 산스크리트 만트라 생성
 function generateSanskrit(state, path, energy) {
