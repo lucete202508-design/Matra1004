@@ -318,23 +318,65 @@ button:active {
     }
 
     function getSanskritWord(kor) {
-      const dict = {
-        사랑: "Prem",
-        평화: "Shanti",
-        치유: "Dhanvantari",
-        용기: "Virya",
-        희망: "Asha",
-        성장: "Vriddhi",
-        감사: "Kruta",
-        지혜: "Jnana",
-        용서: "Kshama",
-        기쁨: "Ananda",
-        진실: "Satya",
-        믿음: "Shraddha",
-        슬픔: "Dukha",
-        두려움: "Bhaya",
-        혼란: "Moha"
-      };
+
+
+// 🌿 Lucete Mantra Dictionary — 한글 / 영어 / 산스크리트어(발음) / 산스크리트어(문자)
+const mantraDict = {
+  // 🌸 현재 상태
+  "불안": { en: "Anxiety", sa: "Chinta", dev: "चिन्ता" },
+  "혼란": { en: "Confusion", sa: "Moha", dev: "मोह" },
+  "외로움": { en: "Loneliness", sa: "Ekaanta", dev: "एकान्त" },
+  "슬픔": { en: "Sorrow", sa: "Dukha", dev: "दुःख" },
+  "무기력": { en: "Lethargy", sa: "Alasya", dev: "आलस्य" },
+  "분노": { en: "Anger", sa: "Krodha", dev: "क्रोध" },
+  "상처": { en: "Wound", sa: "Vraṇa", dev: "व्रण" },
+  "불확실": { en: "Uncertainty", sa: "Anishchita", dev: "अनिश्चित" },
+  "공허": { en: "Emptiness", sa: "Shunyata", dev: "शून्यता" },
+  "평온": { en: "Calmness", sa: "Shanta", dev: "शान्त" },
+  "감사": { en: "Gratitude", sa: "Kruta", dev: "कृत" },
+  "기대": { en: "Expectation", sa: "Apeksha", dev: "अपेक्षा" },
+
+  // 🌼 향하는 길
+  "치유": { en: "Healing", sa: "Dhanvantari", dev: "धन्वन्तरि" },
+  "성장": { en: "Growth", sa: "Vriddhi", dev: "वृद्धि" },
+  "사랑": { en: "Love", sa: "Prem", dev: "प्रेम" },
+  "용서": { en: "Forgiveness", sa: "Kshama", dev: "क्षमा" },
+  "희망": { en: "Hope", sa: "Asha", dev: "आशा" },
+  "이해": { en: "Understanding", sa: "Bodha", dev: "बोध" },
+  "깨달음": { en: "Enlightenment", sa: "Bodhi", dev: "बोधि" },
+  "진실": { en: "Truth", sa: "Satya", dev: "सत्य" },
+  "자유": { en: "Freedom", sa: "Svatantrata", dev: "स्वतंत्रता" },
+  "용기": { en: "Courage", sa: "Virya", dev: "वीर्य" },
+  "지혜": { en: "Wisdom", sa: "Jnana", dev: "ज्ञान" },
+  "수용": { en: "Acceptance", sa: "Svikara", dev: "स्वीकार" },
+
+  // 🔆 필요한 에너지
+  "평화": { en: "Peace", sa: "Shanti", dev: "शान्ति" },
+  "균형": { en: "Balance", sa: "Samatva", dev: "समत्व" },
+  "빛": { en: "Light", sa: "Jyoti", dev: "ज्योति" },
+  "믿음": { en: "Faith", sa: "Shraddha", dev: "श्रद्धा" },
+  "안정": { en: "Stability", sa: "Sthirata", dev: "स्थिरता" },
+  "연결": { en: "Connection", sa: "Sambandha", dev: "सम्बन्ध" },
+  "회복": { en: "Recovery", sa: "Punuruddhara", dev: "पुनरुद्धार" },
+  "신뢰": { en: "Trust", sa: "Vishvasa", dev: "विश्वास" },
+  "자비": { en: "Compassion", sa: "Karuna", dev: "करुणा" },
+  "기쁨": { en: "Joy", sa: "Ananda", dev: "आनन्द" },
+  "열정": { en: "Passion", sa: "Utsaha", dev: "उत्साह" },
+  "의지": { en: "Will", sa: "Ichha", dev: "इच्छा" }
+};
+
+// 🌟 단어 변환 함수
+function getMantraWord(kor) {
+  return mantraDict[kor] || { en: kor, sa: kor, dev: kor };
+}
+
+
+
+
+
+
+
+      
       return dict[kor] || kor;
     }
 
