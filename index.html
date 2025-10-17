@@ -236,6 +236,16 @@ button:active {
     0 0 60px rgba(200,180,255,0.4);
   transform: scale(0.97); /* 살짝 눌리는 느낌 */
 }
+    
+/* 버튼 묶음 영역 (세 개 버튼 감싸는 div) */
+.buttons {
+  margin-top: 100px; /* 👈 카드와 버튼 사이 간격 */
+  margin-bottom: 100px; /* 화면 아래쪽 여백 */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+}
 
   </style>
 </head>
