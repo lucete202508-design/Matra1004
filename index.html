@@ -313,13 +313,14 @@ function restart() {
   
 // 📤 테스트 시작 페이지 공유
 function shareLink() {
-  const url = window.location.origin + "/state.html";
+  const url = "https://lucete202508-design.github.io/Matra1004/state.html";
   navigator.clipboard.writeText(url).then(() => {
     alert("✅ 테스트 시작 링크가 복사되었습니다!\n친구에게 공유해보세요 💜");
   }).catch(() => {
     alert("⚠️ 복사에 실패했습니다. 수동으로 주소를 복사해주세요!");
   });
 }
+
 
 // 💎 루세테의 원석상점 바로가기
 function goLucete() {
