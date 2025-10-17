@@ -285,66 +285,99 @@ button:active {
     <button>루세테의 원석상점 바로가기</button>
   </div>
 
-   <script>
-  // 선택값 불러오기
-  const state = localStorage.getItem("selectedState") || "—";
-  const path = localStorage.getItem("selectedPath") || "—";
-  const energy = localStorage.getItem("selectedEnergy") || "—";
+ <script>
+    const state = localStorage.getItem("selectedState") || "—";
+    const path = localStorage.getItem("selectedPath") || "—";
+    const energy = localStorage.getItem("selectedEnergy") || "—";
 
-  // 🌟 만트라 자동 생성 로직
-  function generateMantra(state, path, energy) {
-    const templatesKo = [
-      `나는 ${energy} 속에서 ${path}되고 있다.`,
-      `나는 ${path}의 길 위에서 ${energy}를 느낀다.`,
-      `나는 ${state} 속에서 ${energy}를 찾아간다.`,
-      `나는 ${energy}로 ${path}의 문을 연다.`,
-      `나는 ${energy}와 함께 ${path}의 여정을 걷는다.`
-    ];
+    function generateMantra(state, path, energy) {
+      const templatesKo = [
+        `나는 ${state} 속에서 ${path}의 길을 걷고 있다.`,
+        `나는 ${energy}와 함께 ${path}의 여정을 시작한다.`,
+        `나는 ${state}를 지나 ${path}로 나아간다.`,
+        `나는 ${energy} 속에서 ${path}을(를) 배운다.`,
+        `나는 ${energy}의 빛으로 ${path}를 향해 간다.`,
+        `나는 ${path}의 시간 속에서 ${energy}를 느낀다.`,
+        `나는 ${energy}를 품고 ${path}로 향한다.`
+      ];
 
-    const templatesEn = [
-      `I am walking the path of ${path} with ${energy}.`,
-      `I am becoming one with ${energy}.`,
-      `I am finding ${energy} through ${path}.`,
-      `I am growing beyond ${state}, into ${energy}.`,
-      `I am surrounded by ${energy}, moving toward ${path}.`
-    ];
+      const templatesEn = [
+        `I walk the path of ${path} through ${energy}.`,
+        `I begin the journey of ${path} with ${energy}.`,
+        `I move beyond ${state}, into ${path}.`,
+        `I learn ${path} through the light of ${energy}.`,
+        `I carry ${energy} as I walk toward ${path}.`,
+        `I am surrounded by ${energy}, becoming ${path}.`,
+        `I grow from ${state} toward ${path} with ${energy}.`
+      ];
 
-    return {
-      ko: templatesKo[Math.floor(Math.random() * templatesKo.length)],
-      en: templatesEn[Math.floor(Math.random() * templatesEn.length)]
-    };
-  }
-
-  // 🌙 페이지 로드 후 실행
-  document.addEventListener("DOMContentLoaded", () => {
-    // 선택값 표시
-    const choicesDiv = document.querySelector(".choices");
-    if (choicesDiv) {
-      choicesDiv.innerHTML = `
-        <span>현재 상태: ${state}</span>
-        <span>향하는 길: ${path}</span>
-        <span>필요한 에너지: ${energy}</span>
-      `;
+      return {
+        ko: templatesKo[Math.floor(Math.random() * templatesKo.length)],
+        en: templatesEn[Math.floor(Math.random() * templatesEn.length)]
+      };
     }
 
-    // 만트라 생성 및 표시
-    const mantraKo = document.querySelector(".mantra-ko");
-    const mantraEn = document.querySelector(".mantra-en");
-    if (mantraKo && mantraEn) {
+    function getSanskritWord(kor) {
+      const dict = {
+        사랑: "Prem",
+        평화: "Shanti",
+        치유: "Dhanvantari",
+        용기: "Virya",
+        희망: "Asha",
+        성장: "Vriddhi",
+        감사: "Kruta",
+        지혜: "Jnana",
+        용서: "Kshama",
+        기쁨: "Ananda",
+        진실: "Satya",
+        믿음: "Shraddha",
+        슬픔: "Dukha",
+        두려움: "Bhaya",
+        혼란: "Moha"
+      };
+      return dict[kor] || kor;
+    }
+
+    function generateSanskrit(state, path, energy) {
+      const sState = getSanskritWord(state);
+      const sPath = getSanskritWord(path);
+      const sEnergy = getSanskritWord(energy);
+
+      const forms = [
+        `Aham ${sEnergy} ${sPath} asmi`,
+        `${sEnergy} ${sPath} namah`,
+        `Om ${sEnergy} ${sPath} dhara`,
+        `Sri ${sPath} ${sEnergy} amrita`,
+        `${sEnergy} ${sPath} bhava`,
+        `Aham ${sEnergy} ${sPath} maya`
+      ];
+      return forms[Math.floor(Math.random() * forms.length)];
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const choicesDiv = document.querySelector(".choices");
+      if (choicesDiv) {
+        choicesDiv.innerHTML = `
+          <span>현재 상태: ${state}</span>
+          <span>향하는 길: ${path}</span>
+          <span>필요한 에너지: ${energy}</span>
+        `;
+      }
+
       const mantra = generateMantra(state, path, energy);
-      mantraKo.textContent = mantra.ko;
-      mantraEn.textContent = mantra.en;
-    }
+      const sanskrit = generateSanskrit(state, path, energy);
 
-    // 🔁 "다시 하기" 버튼 클릭 시 첫 화면으로 이동
-    const retryButton = document.querySelector(".buttons button:first-child");
-    if (retryButton) {
-      retryButton.addEventListener("click", () => {
+      document.querySelector(".mantra-hi").textContent = sanskrit;
+      document.querySelector(".mantra-lat").textContent = sanskrit;
+      document.querySelector(".mantra-ko").textContent = mantra.ko;
+      document.querySelector(".mantra-en").textContent = mantra.en;
+
+      // 다시하기 버튼
+      document.querySelector(".buttons button:first-child").addEventListener("click", () => {
         localStorage.clear();
         window.location.href = "state.html";
       });
-    }
-  });
+    });
   </script>
 </body>
 </html>
