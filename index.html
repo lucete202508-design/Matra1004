@@ -290,6 +290,27 @@ const state = localStorage.getItem("selectedState") || "—";
 const path = localStorage.getItem("selectedPath") || "—";
 const energy = localStorage.getItem("selectedEnergy") || "—";
 
+
+function restart() {
+  localStorage.clear();
+  window.location.href = "state.html";
+}
+
+
+  // 📤 테스트 시작 페이지 공유
+function shareLink() {
+  const url = window.location.origin + "/state.html";
+  navigator.clipboard.writeText(url).then(() => {
+    alert("✅ 테스트 시작 링크가 복사되었습니다!\n친구에게 보내서 함께 해보세요 💫");
+  });
+}
+
+// 💎 루세테의 원석상점 바로가기
+function goLucete() {
+  window.open("https://naver.me/xPUP0TSz", "_blank");
+}
+
+  
 // 🌿 Lucete Mantra Dictionary
 const mantraDict = {
   "불안": { en: "Anxiety", sa: "Chinta", dev: "चिन्ता" },
